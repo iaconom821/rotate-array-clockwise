@@ -1,5 +1,9 @@
 function rotateArray(arr, k) {
   // type your code here
+  const actualRot = k % arr.length 
+  const splicedArr = arr.splice(-actualRot, actualRot)
+  const returnArr = [...splicedArr, ...arr]
+  return returnArr
 }
 
 if (require.main === module) {
@@ -22,3 +26,5 @@ module.exports = rotateArray;
 
 // Please add your pseudocode to this file
 // And a written explanation of your solution
+
+// splice the old array and take the number of values from the end, spread out the old array of values into the end of the new array that splice returned.
